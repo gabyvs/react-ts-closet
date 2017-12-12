@@ -7,7 +7,17 @@ const options = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     hot: true,
-    host: 'localhost'
+    host: 'localhost',
+    publicPath: '/',
+    quiet: false,
+    noInfo: false,
+    stats: {
+        chunks: false,
+        colors: true
+    },
+    proxy: {
+        "/": "http://localhost:5000/"
+    },
 };
 
 webpackDevServer.addDevServerEntrypoints(config, options);

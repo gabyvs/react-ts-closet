@@ -5,8 +5,9 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        app: './src/index.js'
+        app: './src/index.tsx'
     },
+    // I should use vendors for react.
     devtool: 'inline-source-map',
     // this will be ignored, taken from server.js instead.
     devServer: {
@@ -16,11 +17,15 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Output Management'
+            title: 'Output Management',
+            template: './index.html'
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".json"]
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -28,6 +33,17 @@ module.exports = {
     },
     module: {
         rules: [
+            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader" },
+
+            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                loader: "source-map-loader" },
+
             {
                 test: /\.css$/,
                 use: [
@@ -48,5 +64,5 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
 };
