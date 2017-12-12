@@ -1,9 +1,11 @@
 const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
+const path = require('path');
 
 const config = require('./webpack.config.js');
 const options = {
-    contentBase: './dist',
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
     hot: true,
     host: 'localhost'
 };

@@ -8,6 +8,7 @@ module.exports = {
         app: './src/index.js'
     },
     devtool: 'inline-source-map',
+    // this will be ignored, taken from server.js instead.
     devServer: {
         contentBase: './dist',
         hot: true
