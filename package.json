@@ -4,10 +4,9 @@
   "description": "Project to try out react with typescript",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
     "watch": "webpack --watch",
     "build": "webpack",
-    "server": "node server.js"
+    "start": "node server.js"
   },
   "author": "Gabriela Vazquez",
   "license": "Apache-2.0",
