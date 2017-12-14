@@ -8,5 +8,6 @@ export interface Item {
     name: string;
     description?: string;
     used: number;
-    lastUsed: number
+    lastUsed: number;
+    id: number;
 }

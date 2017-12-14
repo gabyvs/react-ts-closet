@@ -1,0 +1,22 @@
+{
+    "closet": [
+        {
+            "category": "top",
+            "subcategory": "sweater",
+            "name": "sueter morado",
+            "description": "Sueter morado cerrado",
+            "used": 0,
+            "lastUSed": 0,
+            "id": 0
+        },
+        {
+            "category": "bottom",
+            "subcategory": "skirt",
+            "name": "Falda negra con rojo",
+            "description": "Minifalda negra con cuadrados rojos",
+            "used": 0,
+            "lastUSed": 0,
+            "id": 1
+        }
+    ]
+}
